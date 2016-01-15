@@ -46,6 +46,7 @@ $reqBody = @{
 	"otp" = $OTP
 }
 
+$responsePayload = Call-PingID-API $reqBody $apiEndpoint
 
 #	Retrieve the User Details to verify call
 $userDetailsEndpoint = "https://idpxnyl3m.pingidentity.com/pingid/rest/4/getuserdetails/do"
