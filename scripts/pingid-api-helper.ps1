@@ -11,6 +11,8 @@
 #>
 
 #	Replace with the PingID settings found in the PingID settings file:
+#   Note: Remove any backslash characters from the use_base64_key value.
+
 $org_alias      = "<< orgAlias value from pingid.properties file >>";
 $use_base64_key = "<< use_base64_key value from pingid.properties file >>";
 $token          = "<< token value from pingid.properties file >>";
