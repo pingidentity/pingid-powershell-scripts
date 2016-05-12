@@ -39,6 +39,9 @@ $reqBody = @{
 	"userName" = $UserName
 }
 
+$responsePayload = Call-PingID-API $reqBody $apiEndpoint
+Write-Output $responsePayload
+
 # Retrieve the User Details to verify call
 $reqBody = @{
 	"userName" = $UserName
