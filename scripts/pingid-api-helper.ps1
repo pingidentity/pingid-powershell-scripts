@@ -111,6 +111,7 @@ function Call-PingID-API {
 	param (
 		[hashtable] $reqBody,
 		[string] $apiEndpoint
+		[string] $fileType
 	)
 
 	$jwtHeader = @{
@@ -148,7 +149,12 @@ function Call-PingID-API {
 	Write-Verbose "Calling PingID API:"
 
 	try {
-		$apiResponse = Invoke-WebRequest -Uri $apiEndpoint -Body $apiToken -ContentType "application/json" -Method Post
+	    if ($apiEndpoint -eq "https://idpxnyl3m.pingidentity.com/pingid/rest/4/getorgreport/do") {
+            $logTimeStamp = Get-Date –f yyyyMMddHHmmss
+    	    $apiResponse = Invoke-WebRequest -Uri $apiEndpoint -Body $apiToken -ContentType "application/json" -Method Post -Outfile E:\pingid-users\pingid-$logTimeStamp.$fileType
+        } else {
+		    $apiResponse = Invoke-WebRequest -Uri $apiEndpoint -Body $apiToken -ContentType "application/json" -Method Post
+		}
 	} catch {
 		Write-Verbose "FAILED - ERROR CODE: "
 		Write-Verbose $_.Exception.Response.StatusCode.Value__
