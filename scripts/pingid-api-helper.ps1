@@ -110,7 +110,7 @@ function Call-PingID-API {
 	[CmdletBinding()]
 	param (
 		[hashtable] $reqBody,
-		[string] $apiEndpoint
+		[string] $apiEndpoint,
 		[string] $fileType
 	)
 
@@ -173,6 +173,6 @@ function Call-PingID-API {
 	} else {
 
 		Write-Verbose "FAILED"
-		Write-Verbose "Failed: Error code $apiResponse.StatusCode"
+		Write-Verbose "Failed: Error code $($apiResponse.StatusCode)"
 	}
 }
