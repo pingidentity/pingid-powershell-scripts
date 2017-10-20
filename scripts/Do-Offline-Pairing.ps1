@@ -24,10 +24,6 @@ The email address or phone number of the user to pair.
 
 Do-Offline-Pairing -UserName testuser -Type SMS -PairingData 4112345678
 
-.Author
-
-Mohit Narang <narang.mohit@outlook.com>
-
 #>
 
 param(
