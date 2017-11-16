@@ -150,7 +150,7 @@ function Call-PingID-API {
 
 	try {
 	    if ($apiEndpoint -eq "https://idpxnyl3m.pingidentity.com/pingid/rest/4/getorgreport/do") {
-            $logTimeStamp = Get-Date –f yyyyMMddHHmmss
+            $logTimeStamp = Get-Date -f yyyyMMddHHmmss
     	    $apiResponse = Invoke-WebRequest -Uri $apiEndpoint -Body $apiToken -ContentType "application/json" -Method Post -Outfile E:\pingid-users\pingid-$logTimeStamp.$fileType
         } else {
 		    $apiResponse = Invoke-WebRequest -Uri $apiEndpoint -Body $apiToken -ContentType "application/json" -Method Post
