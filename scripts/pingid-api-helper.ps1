@@ -16,7 +16,7 @@
 $org_alias      = "<< orgAlias value from pingid.properties file >>";
 $use_base64_key = "<< use_base64_key value from pingid.properties file >>";
 $token          = "<< token value from pingid.properties file >>";
-$api_version    = "4.6"
+$api_version    = "4.9"
 
 function Convert-StringToByteArray {
 
