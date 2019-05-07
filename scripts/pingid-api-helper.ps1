@@ -116,7 +116,7 @@ function Call-PingID-API {
 
 	$jwtHeader = @{
 		"alg" = "HS256"
-		"org_alias" = $org_alias
+		"orgAlias" = $org_alias
 		"token" = $token
 	}
 	
